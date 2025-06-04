@@ -1,25 +1,20 @@
-import { Router } from 'express'
+import express from 'express';
+import type { Request, Response, NextFunction } from 'express';
+import prisma from "@/script.js";
 
-const authRoutes = Router()
+const authRoutes = express.Router();
+
+// Midleware.
+const middleware = (req: Request, res: Response, next: NextFunction) => {
+  console.log("Middleware executed.");
+  next();
+};
+
+authRoutes.use(middleware);
 
 // Login.
-authRoutes.post("/login", (req, res) => {
-  res.send("Post login.")
-})
-
-// // Register.
-// authRoutes.post("/register", (req, res) => {
-//   res.send("Post register.")
-// })
-
-// // Recover password.
-// authRoutes.post("/recover-password", (req, res) => {
-//   res.send("Post recover-password.")
-// })
-
-// // Logout.
-// authRoutes.post("/logout", (req, res) => {
-//   res.send("Post logout.")
-// })
+authRoutes.post("/login", (req: Request, res: Response, next: NextFunction) => {
+  res.send("Post login 333.");
+});
 
 export default authRoutes
