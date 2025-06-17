@@ -1,6 +1,6 @@
 import express from 'express';
 import type { Request, Response, NextFunction } from 'express';
-import prisma from "@/script.js";
+import prisma from "../../script.js";
 
 const authRoutes = express.Router();
 
