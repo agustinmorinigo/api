@@ -1,20 +1,16 @@
 import express from 'express';
-import type { Request, Response, NextFunction } from 'express';
-import prisma from "../../script.js";
+import registerRoutes from './register.js';
+import loginRoutes from './login.js';
+import forgotPasswordRoutes from './forgot-password.js';
+import resetPasswordRoutes from './reset-password.js';
+import refreshTokenRoutes from './refresh-token.js';
 
 const authRoutes = express.Router();
 
-// Midleware.
-const middleware = (req: Request, res: Response, next: NextFunction) => {
-  console.log("Middleware executed.");
-  next();
-};
-
-authRoutes.use(middleware);
-
-// Login.
-authRoutes.post("/login", (req: Request, res: Response, next: NextFunction) => {
-  res.send("Post login 333.");
-});
+authRoutes.use('/register', registerRoutes);
+authRoutes.use('/login', loginRoutes);
+authRoutes.use('/forgot-password', forgotPasswordRoutes);
+authRoutes.use('/reset-password', resetPasswordRoutes);
+authRoutes.use('/refresh-token', refreshTokenRoutes);
 
 export default authRoutes
