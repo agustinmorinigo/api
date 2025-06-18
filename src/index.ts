@@ -8,6 +8,8 @@ import authRoutes from "./routes/auth/index.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(express.json()); // 👈 ¡ESTO ES OBLIGATORIO!. Para que se parsee el req.body
+
 app.use('/auth', authRoutes)
 
 // Run app.
