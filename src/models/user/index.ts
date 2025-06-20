@@ -8,10 +8,8 @@ export const createUser = async (userData: RegisterData): Promise<User> => {
       data: userData
     })
   } catch (error) {
-    console.log("error: ", error);
-
     if (error instanceof PrismaT.PrismaClientKnownRequestError) {
-      throw new Error(error.message)
+      throw error
     }
 
     throw new Error('Failed to create user.')
