@@ -1,5 +1,5 @@
 import * as v from 'valibot';
-import { EmailSchema, PasswordSchema } from '../shared.js';
+import { EmailSchema, PasswordSchema } from 'schemas/shared';
 
 // TO DO: Los números vienen del schema.prisma. Sería ideal que eso se pueda parametrizar.
 
