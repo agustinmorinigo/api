@@ -1,6 +1,6 @@
-import prisma from 'prisma';
-import { RegisterData } from 'schemas/auth/register';
 import { Prisma as PrismaT, User } from '@prisma/client';
+import prisma from '@/prisma';
+import { RegisterData } from '@/schemas/auth/register';
 
 export const createUser = async (userData: RegisterData): Promise<User> => {
   try {
