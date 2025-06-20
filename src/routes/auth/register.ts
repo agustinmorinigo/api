@@ -1,10 +1,10 @@
-import { createUser } from '../../models/user/index.js';
-import { RegisterData, RegisterSchema } from '../../schemas/auth/register.js';
+import { RegisterData, RegisterSchema } from 'schemas/auth/register';
 import express from 'express';
 import type { Request } from 'express';
 import { parse, isValiError } from 'valibot';
 import { Prisma as PrismaT } from '@prisma/client';
 import bcrypt from "bcrypt"
+import { createUser } from 'models/user';
 
 const registerRoutes = express.Router();
 
