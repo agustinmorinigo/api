@@ -6,14 +6,7 @@
     "noEmit": true,
     "baseUrl": "./src",
     "paths": {
-      "config/*": ["config/*"],
-      "controllers/*": ["controllers/*"],
-      "middlewares/*": ["middlewares/*"],
-      "models/*": ["models/*"],
-      "prisma/*": ["prisma/*"],
-      "routes/*": ["routes/*"],
-      "schemas/*": ["schemas/*"],
-      "utils/*": ["utils/*"],
+      "@/*": ["*"]
     },
     "rootDir": "./src",
     "esModuleInterop": true,
